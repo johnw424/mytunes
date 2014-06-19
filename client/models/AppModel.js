@@ -17,9 +17,11 @@ var AppModel = Backbone.Model.extend({
       this.set('currentSong', song);
     }, this);
 
+    //look for 'enqueue' trigger, add to songQueue collection
     params.library.on('enqueue', function(song){
       this.get('songQueue').add(song);
     }, this);
+
   }
 
 });
